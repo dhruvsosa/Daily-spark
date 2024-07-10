@@ -161,6 +161,116 @@
     background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
           linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
   }
+
+  .news-img{
+    max-height: 250px;
+    min-height: 250px;
+  }
+
+  .card{
+    max-height: 510px;
+    min-height: 510px;
+    border: rgb(201, 201, 201) solid;
+    border-radius: 10px;
+  }
+  /* /* .card-title{
+    min-height: 50px;
+  } */
+  .card-text{
+    min-height: 50px ;
+   
+  } 
+  .news-headline{
+    padding-top: 10vmin;
+  }
+  .nav-link:hover{
+    color: red;
+  }
+
+  .navbar{
+    height: 75px;
+  }
+  .app {
+    transition: background-color 0.5s, color 0.5s;
+  }
+  .light-mode{
+    background-color: white;
+    color: black;
+
+  }
+  .dark-mode{
+    background-color: black;
+    color:white;
+  }
+
+  /* Minecraft switch made by: csozi | Website: english.csozi.hu*/
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.off {
+  position: absolute;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background-color: white;
+  transition: .4s;
+  image-rendering: pixelated;
+  opacity: 1;
+}
+
+.on {
+  position: absolute;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background-color: white;
+  transition: .4s;
+  image-rendering: pixelated;
+  opacity: 0;
+}
+
+.switch input:checked + .slider {
+  background-color: #ccc;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #ccc;
+}
+
+.switch input:checked ~ .off {
+  transform: translateX(2em);
+}
+
+.switch input:checked ~ .on {
+  transform: translateX(2em);
+  opacity: 1;
+}
   
   /* Animations */
   @keyframes hamster {
