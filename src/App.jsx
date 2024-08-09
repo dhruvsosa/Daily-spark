@@ -35,7 +35,6 @@ export default class App extends Component {
     return (
       <div>
         <Router>
-       {/* <div className={`app ${themeClass}`}>  */}
         <div className={`app ${themeClass}`}>
         <NavBar isDarkMode={isDarkMode}  toggleMode={this.toggleDarkMode}/>
         <Routes>
