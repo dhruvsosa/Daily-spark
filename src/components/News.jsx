@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Newsitem from './Newsitem'
 import InfiniteScroll from "react-infinite-scroll-component";
-
 // import Loader from './Loader';
 export class News extends Component {
 
@@ -20,15 +19,20 @@ export class News extends Component {
   }
 
   async UpdateNews(PageNo){
+    this.props.setProgress(10);
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=5f67567f06194be98a252c8d00396307&category=${this.props.category}&pageSize=${this.props.pageSize}&page=${PageNo}`;
-    
+    this.setState({ loading: true});
+    this.props.setProgress(30);
     let data = await fetch(url);
+    this.props.setProgress(70);
+
     let parsedData = await data.json();
     console.log(parsedData);
     this.setState({ 
       articles: parsedData.articles, 
       totalResults: parsedData.totalResults,
     });
+    this.props.setProgress(100);
     document.title=`${this.capitalizeFirstLetter(this.props.category)} - Daily spark`
   }
 
@@ -65,7 +69,7 @@ this.setState(
     let parsedData = await data.json();
     console.log(parsedData);
     this.setState({ 
-      articles: parsedData.articles, 
+      articles: parsedData.articles.concat(this.state.articles),
       totalResults: parsedData.totalResults,
     });
   };
